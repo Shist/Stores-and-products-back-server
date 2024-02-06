@@ -1,0 +1,14 @@
+{
+	"loopback-component-explorer": {
+		"mountPath": "/explorer",
+		"generateOperationScopedModels": true
+	},
+	"loopback-seed": {
+		"datasource": "memory"
+	},
+	"n-odata-server": {
+		"path": "/odata/*",
+		"odataversion": "2",
+		"useViaMiddleware": true
+	}
+}

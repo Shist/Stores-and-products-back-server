@@ -1,0 +1,77 @@
+{
+	"name": "ProductComment",
+	"plural": "ProductComments",
+	"base": "PersistedModel",
+	"idInjection": false,
+	"options": {
+		"validateUpsert": true,
+		"postgresql": {
+			"schema": "public",
+			"table": "ProductComment"
+		}
+	},
+
+	"properties": {
+		"Id": {
+			"type": "Number",
+			"id": true,
+			"generated": true,
+			"postgresql": {
+				"columnName": "Id",
+				"dataType": "integer",
+				"nullable": "NO"
+			}
+		},
+		"Author": {
+			"type": "string",
+			"required": true,
+			"length": 45,
+			"postgresql": {
+				"columnName": "Author",
+				"dataType": "character varying",
+				"dataLength": 45,
+				"nullable": "NO"
+			}
+		},
+		"Message": {
+			"type": "String",
+			"required": true,
+			"length": 2000,
+			"postgresql": {
+				"columnName": "Message",
+				"dataType": "character varying",
+				"dataLength": 2000,
+				"nullable": "NO"
+			}
+		},
+		"Rating": {
+			"type": "Number",
+			"postgresql": {
+				"columnName": "Rating",
+				"dataType": "integer",
+				"nullable": "YES"
+			}
+		},
+		"Posted": {
+			"type": "Date",
+			"postgresql": {
+				"columnName": "Posted",
+				"dataType": "date",
+				"nullable": "YES"
+			}
+		},
+		"ProductId": {
+			"type": "Number",
+			"required": true,
+			"postgresql": {
+				"columnName": "ProductId",
+				"dataType": "integer",
+				"nullable": "NO"
+			}
+		}
+	},
+	"validations": [],
+	"relations": {},
+	"acls": [],
+	"methods": {}
+}

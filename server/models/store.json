@@ -1,0 +1,85 @@
+{
+	"name": "Store",
+	"plural": "Stores",
+	"base": "PersistedModel",
+	"idInjection": true,
+	"options": {
+		"validateUpsert": true,
+		"postgresql": {
+			"schema": "public",
+			"table": "Store"
+		}
+	},
+
+	"properties": {
+		"Name": {
+			"type": "string",
+			"required": true,
+			"length": 45,
+			"postgresql": {
+				"columnName": "Name",
+				"dataType": "character varying",
+				"dataLength": 45,
+				"nullable": "NO"
+			}
+		},
+		"Email": {
+			"type": "string",
+			"required": true,
+			"length": 45,
+			"postgresql": {
+				"columnName": "Email",
+				"dataType": "character varying",
+				"dataLength": 45,
+				"nullable": "NO"
+			}
+		},
+		"PhoneNumber": {
+			"type": "string",
+			"required": true,
+			"length": 45,
+			"postgresql": {
+				"columnName": "PhoneNumber",
+				"dataType": "character varying",
+				"dataLength": 45,
+				"nullable": "NO"
+			}
+		},
+		"Address": {
+			"type": "string",
+			"length": 100,
+			"postgresql": {
+				"columnName": "Address",
+				"dataType": "character varying",
+				"dataLength": 100,
+				"nullable": "YES"
+			}
+		},
+		"Established": {
+			"type": "date",
+			"postgresql": {
+				"columnName": "Established",
+				"dataType": "date",
+				"nullable": "YES"
+			}
+		},
+		"FloorArea": {
+			"type": "Number",
+			"postgresql": {
+				"columnName": "FloorArea",
+				"dataType": "integer",
+				"nullable": "YES"
+			}
+		}
+	},
+	"validations": [],
+	"relations": {
+		"rel_Products": {
+			"type": "hasMany",
+			"model": "Product",
+			"foreignKey": "StoreId"
+		}
+	},
+	"acls": [],
+	"methods": {}
+}

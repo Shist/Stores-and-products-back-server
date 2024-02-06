@@ -1,0 +1,124 @@
+{
+	"name": "Product",
+	"plural": "Products",
+	"base": "PersistedModel",
+	"idInjection": true,
+	"options": {
+		"validateUpsert": true,
+		"postgresql": {
+			"schema": "public",
+			"table": "Product"
+		}
+	},
+
+	"properties": {
+		"Name": {
+			"type": "string",
+			"required": true,
+			"length": 45,
+			"postgresql": {
+				"columnName": "Name",
+				"dataType": "character varying",
+				"dataLength": 45,
+				"nullable": "NO"
+			}
+		},
+		"Price": {
+			"type": "Number",
+			"postgresql": {
+				"columnName": "Price",
+				"dataType": "integer",
+				"nullable": "YES"
+			}
+		},
+		"Photo": {
+			"type": "string",
+			"required": false,
+			"length": 100,
+			"postgresql": {
+				"columnName": "Photo",
+				"dataType": "character varying",
+				"dataLength": 100,
+				"nullable": "YES"
+			}
+		},
+		"Specs": {
+			"type": "string",
+			"required": true,
+			"length": 2000,
+			"postgresql": {
+				"columnName": "Specs",
+				"dataType": "character varying",
+				"dataLength": 2000,
+				"nullable": "NO"
+			}
+		},
+		"Rating": {
+			"type": "Number",
+			"postgresql": {
+				"columnName": "Rating",
+				"dataType": "integer",
+				"nullable": "YES"
+			}
+		},
+		"SupplierInfo": {
+			"type": "string",
+			"length": 2000,
+			"postgresql": {
+				"columnName": "SupplierInfo",
+				"dataType": "character varying",
+				"dataLength": 2000,
+				"nullable": "YES"
+			}
+		},
+		"MadeIn": {
+			"type": "string",
+			"length": 45,
+			"postgresql": {
+				"columnName": "MadeIn",
+				"dataType": "character varying",
+				"dataLength": 45,
+				"nullable": "YES"
+			}
+		},
+		"ProductionCompanyName": {
+			"type": "string",
+			"length": 100,
+			"postgresql": {
+				"columnName": "ProductionCompanyName",
+				"dataType": "character varying",
+				"dataLength": 100,
+				"nullable": "YES"
+			}
+		},
+		"Status": {
+			"type": "string",
+			"length": 100,
+			"postgresql": {
+				"columnName": "Status",
+				"dataType": "character varying",
+				"dataLength": 100,
+				"nullable": "YES"
+			}
+		},
+		"StoreId": {
+			"type": "number",
+			"required": true,
+			"postgresql": {
+				"columnName": "StoreId",
+				"dataType": "integer",
+				"nullable": "NO"
+			}
+		}
+	},
+	"validations": [],
+	"relations": {
+		"rel_Store": {
+			"type": "belongsTo",
+			"model": "Store",
+			"foreignKey": "StoreId"
+		}
+	},
+	"acls": [],
+	"methods": {}
+}

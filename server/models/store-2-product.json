@@ -1,0 +1,50 @@
+{
+	"name": "Store2Product",
+	"plural": "Stores2Products",
+	"base": "PersistedModel",
+	"idInjection": false,
+	"options": {
+		"validateUpsert": true,
+		"postgresql": {
+			"schema": "public",
+			"table": "Store2Product"
+		}
+	},
+	"properties": {
+		"StoreId": {
+			"id": 1,
+			"type": "number",
+			"required": true,
+			"postgresql": {
+				"columnName": "StoreId",
+				"dataType": "integer",
+				"nullable": "NO"
+			}
+		},
+		"ProductId": {
+			"id": 2,
+			"type": "number",
+			"required": true,
+			"postgresql": {
+				"columnName": "ProductId",
+				"dataType": "integer",
+				"nullable": "NO"
+			}
+		}
+	},
+	"validations": [],
+	"relations": {
+		"rel_Store": {
+			"type": "belongsTo",
+			"model": "Store",
+			"foreignKey": "StoreId"
+		},
+		"rel_Product": {
+			"type": "belongsTo",
+			"model": "Product",
+			"foreignKey": "ProductId"
+		}
+	},
+	"acls": [],
+	"methods": {}
+}

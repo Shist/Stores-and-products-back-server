@@ -1,0 +1,36 @@
+{
+  "_meta": {
+    "sources": [
+      "loopback/common/models",
+      "loopback/server/models",
+      "../common/models",
+      "./models"
+    ],
+    "mixins": [
+      "loopback/common/mixins",
+      "loopback/server/mixins",
+      "../common/mixins",
+      "./mixins"
+    ]
+  },
+  "Store": {
+    "dataSource": "memory",
+    "public": true
+  },
+  "Product": {
+    "dataSource": "memory",
+    "public": true
+  },
+  "Store2Product": {
+    "dataSource": "memory",
+    "public": true
+  },
+  "ProductComment": {
+    "dataSource": "memory",
+    "public": true
+  },
+  "ACL": {
+    "dataSource": "memory",
+    "public": false
+  }
+}

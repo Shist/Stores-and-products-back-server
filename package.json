@@ -1,0 +1,39 @@
+{
+  "name": "ui5c",
+  "version": "1.0.0",
+  "main": "server/server.js",
+  "engines": {
+    "node": ">=6"
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "start": "node .",
+    "posttest": "npm run lint && npm audit",
+    "db": "node ./server/server automigrate && node ./database/migrate.js seed",
+    "db-masterdata-only": "node ./server/server automigrate && node ./database/migrate.js seed masterdata-only"
+  },
+  "dependencies": {
+    "compression": "^1.0.3",
+    "cors": "^2.5.2",
+    "helmet": "^3.10.0",
+    "loopback": "^3.22.0",
+    "loopback-boot": "^2.6.5",
+    "loopback-component-explorer": "^6.2.0",
+    "loopback-connector-postgresql": "^3.6.0",
+    "loopback-seed": "^1.0.1",
+    "serve-favicon": "^2.0.1",
+    "strong-error-handler": "^3.0.0",
+    "n-odata-server": "andrii-naumovych/n-odata-server",
+    "loopback-connector": "andrii-naumovych/loopback-connector"
+  },
+  "devDependencies": {
+    "eslint": "^3.17.1",
+    "eslint-config-loopback": "^8.0.0"
+  },
+  "repository": {
+    "type": "",
+    "url": ""
+  },
+  "license": "UNLICENSED",
+  "description": "ui5c"
+}
